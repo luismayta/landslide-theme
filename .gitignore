@@ -82,6 +82,3 @@ target/
 
 # ignored files Vagrant
 .vagrant
-
-reveal.js/
-reveal.js
