@@ -1,0 +1,77 @@
+# ~/.tmuxinator/landslide-theme.yml
+name: landslide-theme
+root: <%= ENV["PROJECTS"] %>/python/landslide/theme
+tmux_options: -2
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre:
+    - make environment
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t landslide-theme
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - editor:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+            - <%= ENV["EDITOR"] %>
+        - docker:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+  - python:
+      layout: main-vertical
+      panes:
+        - python:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+            - ipython
+  - databases:
+      layout: main-vertical
+      panes:
+        - postgresql:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+        - shell:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+  - docker:
+      layout: main-vertical
+      panes:
+        - docker:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+        - shell:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+  - tools:
+      layout: main-vertical
+      panes:
+        - watch:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+            - make watch
+        - grip:
+            - pyenv activate landslide-theme
+            - gvm pkgset use landslide-theme
+            - make grip
