@@ -3,10 +3,18 @@
 # Theme Landslide
 
 <span class="badges" align="center">
+[![GitHub tag](https://img.shields.io/github/tag/luismayta/landslide-theme.svg?maxAge=2592000)](https://github.com/luismayta/landslide-theme)
 [![Build Status](https://travis-ci.org/luismayta/landslide-theme.svg)](https://travis-ci.org/luismayta/landslide-theme)
 [![GitHub issues](https://img.shields.io/github/issues/luismayta/landslide-theme.svg)](https://github.com/luismayta/landslide-theme/issues)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
 </span>
+
+## Requirements
+
+ - Linux
+   - none
+ - OSX
+   - none
 
 ## Changelog
 
@@ -23,7 +31,7 @@ para poder visualizar la documentación, ejecutando lo siguiente:
 
 
 ```bash
-grip 5000
+make grip
 ```
 
 ## Credits
